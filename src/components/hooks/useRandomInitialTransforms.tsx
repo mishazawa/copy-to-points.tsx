@@ -6,8 +6,8 @@ export function useRandomInitialTransforms(obj: MutableRefObject<Object3D>) {
     // init some random pos & orient
     const tempp = new Vector3(0, 0, 0).randomDirection();
     const tempq = new Quaternion().random();
-    const temps = new Vector3(1, 1, 1);
 
-    obj.current.matrixWorld.compose(tempp, tempq, temps);
+    obj.current.position.add(tempp);
+    obj.current.applyQuaternion(tempq);
   }, []);
 }

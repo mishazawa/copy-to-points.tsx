@@ -5,6 +5,7 @@ import { Mesh, Object3D } from 'three';
 import { Animation } from './Animation';
 import { Box } from './Box';
 import { useRandomInitialTransforms } from './hooks/useRandomInitialTransforms';
+import { useSolution } from './hooks/useSolution';
 
 const SPEED = 1;
 
@@ -14,6 +15,7 @@ export function Wrap() {
 
   useRandomInitialTransforms(objectRef);
   useCopyToPoints(objectRef, animationRef);
+  useSolution(objectRef, animationRef);
 
   return (
     <>
